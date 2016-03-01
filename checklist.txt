@@ -6,10 +6,9 @@ Release
 * +test
 * +publish-signed
 * Commit the changes.
-* switch branch to for-2.9, merge master, compile, test, publish-signed
-* Tag the release (on master).
+* Tag the release (in develop branch).
 * Close the release in Nexus UI.
 * Push latest version to github. (push --all; push --tags)
-* Update API docs (make-site, ghpages-push-site).
+* Update API docs (ghpages-push-site).
 * Update wiki.
 * Publish herald notes (after Central sync).
