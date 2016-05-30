@@ -73,13 +73,13 @@ Options:
       --help                   Show help message
       --version                Show version of this program
 
-Subcommand: tree
+Command: tree
   -h, --height  <arg>   how tall should the tree be?
       --help            Show help message
 
  trailing arguments:
   tree name (required)   tree name
-Subcommand: palm
+Command: palm
   -h, --height  <arg>   how tall should the palm be?
       --help            Show help message
 

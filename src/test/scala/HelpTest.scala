@@ -40,23 +40,22 @@ class HelpTest extends UsefulMatchers with CapturingTest {
                         |some rubbish
                         |  -a, --apples  <arg>   fresh apples!
                         |  -v, --verbose         very verbose
-                        |      --noverbose       turn off
                         |      --help            Show help message
                         |      --version         Show version of this program
                         |
-                        |Subcommand: tree
+                        |Command: tree
                         |  -b, --branches  <arg>   how many branches?
                         |      --help              Show help message
                         |
                         | trailing arguments:
                         |  trail (required)   Which trail do you choose?
-                        |Subcommand: peach
+                        |Command: peach
                         |plant the fruit-bearing peach tree
                         |  -p, --peaches  <arg>   how many peaches?
                         |      --help             Show help message
                         |Latin name: Prunus persica
                         |
-                        |Subcommand: palm
+                        |Command: palm
                         |  -l, --leaves  <arg>   how many leaves?
                         |      --help            Show help message
                         |and some more
@@ -86,7 +85,7 @@ class HelpTest extends UsefulMatchers with CapturingTest {
                         |      --help            Show help message
                         |      --version         Show version of this program
                         |
-                        |Subcommand: tree - some tree
+                        |Command: tree - some tree
                         |  -b, --branches  <arg>   how many branches?
                         |      --help              Show help message
                         |""".stripMargin)
@@ -204,7 +203,7 @@ class HelpTest extends UsefulMatchers with CapturingTest {
         |  -b, --bananas  <arg>
         |      --help             Show help message
         |
-        |Subcommands:
+        |Commands:
         |  tree        Plant a normal, regular tree
         |  peach       Plant a peach tree.
         |  submarine
@@ -312,19 +311,19 @@ class HelpTest extends UsefulMatchers with CapturingTest {
     }
     out should equal ("""      --help   Show help message
                         |
-                        |Subcommand: tree
+                        |Command: tree
                         |  -b, --branches  <arg>   how many branches?
                         |      --help              Show help message
                         |
                         | trailing arguments:
                         |  trail (required)   Which trail do you choose?
                         |
-                        |Subcommand: tree peach
+                        |Command: tree peach
                         |plant the fruit-bearing peach tree
                         |  -p, --peaches  <arg>   how many peaches?
                         |      --help             Show help message
                         |
-                        |Subcommand: tree peach palm
+                        |Command: tree peach palm
                         |  -l, --leaves  <arg>   how many leaves?
                         |      --help            Show help message
                         |Latin name: Prunus persica
@@ -358,7 +357,7 @@ class HelpTest extends UsefulMatchers with CapturingTest {
     out ====
      """      --help   Show help message
        |
-       |Subcommand: tree
+       |Command: tree
        |  -a, --apples  <arg>   how many apples? (default = 42)
        |      --help            Show help message
        |""".stripMargin

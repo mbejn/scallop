@@ -516,12 +516,12 @@ case class Scallop(
     val subcommandsHelp = if (shortSubcommandsHelp) {
       subbuilders.headOption.map { _ =>
         val maxCommandLength = subbuilders.map(_._1.size).max
-        "\n\nSubcommands:\n" + subbuilders.map(s => "  " + s._1.padTo(maxCommandLength, ' ') + "   " + s._2.descr).mkString("\n")
+        "\n\nCommands:\n" + subbuilders.map(s => "  " + s._1.padTo(maxCommandLength, ' ') + "   " + s._2.descr).mkString("\n")
       }.getOrElse("")
     } else {
       val subHelp = subbuilders.map { case (sn, sub) =>
         val subDescr = if (sub.descr.nonEmpty) " - " + sub.descr else ""
-        ("Subcommand: %s%s%s" format (subcommandPrefix, sn, subDescr)) + "\n" +
+        ("Command: %s%s%s" format (subcommandPrefix, sn, subDescr)) + "\n" +
         sub.bann.map(_+"\n").getOrElse("") +
         sub.help(subcommandPrefix + sn + " ").split("\n").
           filter(!_.trim.startsWith("--version")).mkString("\n") +

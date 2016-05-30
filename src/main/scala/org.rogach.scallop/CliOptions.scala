@@ -201,8 +201,5 @@ case class ToggleOption(
   }
 
   def argLine(sh: List[Char]): String = throw new MajorInternalException
-  def helpInfo(sh: List[Char]) = List(
-    ((sh.map("-" +) ++ List("--" + name) mkString ", "), descrYes, None),
-    (("--" + prefix + name), descrNo, None)
-  )
+  def helpInfo(sh: List[Char]) = List((sh.map("-" +) ++ List("--" + name) mkString ", ", descrYes, None))
 }
